@@ -8,36 +8,49 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [smileyIndex, setSmileyIndex] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
 
   const smileys = [smiley1, smiley2, smiley3];
 
   useEffect(() => {
+    // Only show custom cursor on desktop
+    if (window.innerWidth < 768) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a, button, .cursor-pointer")) {
+      if (target.closest("a, button, .cursor-pointer, [role='button']")) {
         setIsHovering(true);
-        // Change smiley on hover
         setSmileyIndex(prev => (prev % 3) + 1);
       } else {
         setIsHovering(false);
       }
     };
 
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mouseleave", handleMouseLeave);
+    
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
+  if (!isVisible) return null;
+
   return (
     <motion.div 
-      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:flex items-center justify-center"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block"
       animate={{ 
         x: position.x - 20, 
         y: position.y - 20,

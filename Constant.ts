@@ -45,7 +45,7 @@ export const CONFIG = {
         "m1.png", // MODIFIABLE : Image alternative 1
         "m2.png", // MODIFIABLE : Image alternative 2
         "m3.png", // MODIFIABLE : Image alternative 3
-        "moi png-Stantard.png", // MODIFIABLE : Image alternative 4
+        "moi png - Standard.png", // MODIFIABLE : Image alternative 4
         // AJOUTEZ D'AUTRES IMAGES ICI SI VOUS VOULEZ - le cycle continue automatiquement
       ]
     }

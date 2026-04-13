@@ -44,9 +44,14 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`group relative py-12 md:py-20 border-b border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 hover:px-8 transition-all duration-500 cursor-pointer ${activeService === i ? 'bg-primary/10' : ''}`}
-              onClick={() => setActiveService(activeService === i ? null : i)}
+              className={`group relative py-12 md:py-20 border-b border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 hover:px-8 transition-all duration-500 ${activeService === i ? 'bg-primary/10' : ''}`}
             >
+              {/* Background click handler for service selection */}
+              <div 
+                className="absolute inset-0 cursor-pointer z-0"
+                onClick={() => setActiveService(activeService === i ? null : i)}
+              />
+              
               {/* Hover Image Reveal */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 opacity-0 group-hover:opacity-20 pointer-events-none transition-all duration-700 scale-90 group-hover:scale-110 z-0">
                 <img src={service.image} alt="" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
@@ -59,14 +64,17 @@ export default function Services() {
                 </h4>
               </div>
               
-              <div className="max-w-md z-20">
+              <div className="max-w-md z-10">
                 <p className="text-white/40 text-base mb-8 font-medium leading-relaxed group-hover:text-white/70 transition-colors">
                   {service.description}
                 </p>
                 <div className="flex space-x-6">
                   <button 
-                    onClick={() => setSelectedService(service)}
-                    className="text-[10px] font-black uppercase tracking-widest text-primary hover:text-white transition-colors cursor-pointer relative z-30 bg-transparent border-none outline-none"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedService(service);
+                    }}
+                    className="text-[10px] font-black uppercase tracking-widest text-primary hover:text-white transition-colors cursor-pointer relative z-20 bg-transparent border-none outline-none"
                   >
                     {CONFIG.services_section.moreInfo}
                   </button>
