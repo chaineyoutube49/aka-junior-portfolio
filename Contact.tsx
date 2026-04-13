@@ -1,8 +1,42 @@
 import { motion } from "motion/react";
 import { Phone, Mail, Send } from "lucide-react";
 import { CONFIG } from "./Constant";
+import { useState } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    project: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Construire le message pour WhatsApp
+    const message = `Nouvelle demande de projet !%0A%0A` +
+      `Nom: ${formData.name}%0A` +
+      `Email: ${formData.email}%0A` +
+      `Projet: ${formData.project}%0A%0A` +
+      `Merci de me contacter pour discuter de ce projet !`;
+    
+    // URL WhatsApp avec le message pré-rempli
+    const whatsappUrl = `https://wa.me/${CONFIG.profile.whatsapp}?text=${message}`;
+    
+    // Ouvrir WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Réinitialiser le formulaire
+    setFormData({ name: '', email: '', project: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section id="contact" className="section-padding bg-dark">
       <div className="container mx-auto px-6">
@@ -71,34 +105,47 @@ export default function Contact() {
             >
               <h4 className="text-3xl font-display font-black italic mb-8 uppercase">{CONFIG.contact_section.formTitle}</h4>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder={CONFIG.contact_section.formNamePlaceholder} 
                     className="w-full bg-white/5 border border-white/10 p-3 md:p-4 text-sm md:text-xs font-black tracking-widest focus:border-primary outline-none transition-colors"
+                    required
                   />
                 </div>
                 <div>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder={CONFIG.contact_section.formEmailPlaceholder} 
                     className="w-full bg-white/5 border border-white/10 p-3 md:p-4 text-sm md:text-xs font-black tracking-widest focus:border-primary outline-none transition-colors"
+                    required
                   />
                 </div>
                 <div>
                   <textarea 
+                    name="project"
+                    value={formData.project}
+                    onChange={handleChange}
                     placeholder={CONFIG.contact_section.formProjectPlaceholder} 
                     rows={4}
                     className="w-full bg-white/5 border border-white/10 p-3 md:p-4 text-sm md:text-xs font-black tracking-widest focus:border-primary outline-none transition-colors resize-none"
+                    required
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
-                  className="w-full py-4 md:py-6 bg-primary text-white font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-500 text-sm md:text-xs"
+                  className="w-full py-4 md:py-6 bg-primary text-white font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-500 text-sm md:text-xs flex items-center justify-center space-x-2"
                 >
-                  {CONFIG.contact_section.formSubmit}
+                  <Send size={16} />
+                  <span>{CONFIG.contact_section.formSubmit}</span>
                 </button>
               </form>
 
