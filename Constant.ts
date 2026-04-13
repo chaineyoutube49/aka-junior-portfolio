@@ -174,9 +174,9 @@ export const CONFIG = {
       icon: "Globe",
       image: "siteweb.png",
       portfolio: [
-        { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", title: "Site E-commerce Luxe" }, // MODIFIABLE
-        { url: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80", title: "Application SaaS" }, // MODIFIABLE
-        { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80", title: "Site Vitrine Premium" } // MODIFIABLE
+        { url: "siteweb.png", title: "Site E-commerce Luxe" }, // MODIFIABLE
+        { url: "m1.png", title: "Application SaaS" }, // MODIFIABLE
+        { url: "m2.png", title: "Site Vitrine Premium" } // MODIFIABLE
       ]
     },
     {
