@@ -16,7 +16,7 @@ export default function Services() {
   const [activeService, setActiveService] = useState<number | null>(null);
 
   return (
-    <section id="services" className={`section-padding transition-all duration-1000 ${activeService !== null ? 'bg-black' : 'bg-white/[0.01]'}`}>
+    <section id="services" className={`section-padding transition-all duration-1000 cursor-services ${activeService !== null ? 'bg-black' : 'bg-white/[0.01]'}`}>
       <div className="container mx-auto px-6">
         <div className="mb-32">
           <motion.h2 

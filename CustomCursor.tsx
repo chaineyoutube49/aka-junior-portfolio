@@ -23,7 +23,7 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a, button, .cursor-pointer, [role='button']")) {
+      if (target.closest("a, button, .cursor-pointer, [role='button'], .group, .motion-div, .cursor-services")) {
         setIsHovering(true);
         setSmileyIndex(prev => (prev % 3) + 1);
       } else {
