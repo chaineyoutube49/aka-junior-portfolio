@@ -186,8 +186,8 @@ export const CONFIG = {
       icon: "Cpu",
       image: "IA.png",
       portfolio: [
-        { url: "https://images.unsplash.com/photo-1573164713612-4e7cbd01d816?auto=format&fit=crop&w=800&q=80", title: "Shooting IA" }, // MODIFIABLE
-        { url: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&w=800&q=80", title: "Video IA" }, // MODIFIABLE
+        { url: "shoot.png", title: "Shooting IA" }, // MODIFIABLE
+        { url: "videoia.mp4", title: "Video IA" }, // MODIFIABLE
         { url: "automatisation.png", title: "Automatisation Processus" } // MODIFIABLE
       ]
     },
@@ -210,8 +210,8 @@ export const CONFIG = {
       icon: "Video",
       image: "ideo.png",
       portfolio: [
-        { url: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", title: "Montage Short" }, // MODIFIABLE
-        { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", title: "Publicité Produit" }, // MODIFIABLE
+        { url: "vio1.mp4", title: "Montage Short" }, // MODIFIABLE
+        { url: "montagevideo imo.mp4", title: "Publicité Produit" }, // MODIFIABLE
         { url: "youtube.png", title: "Video Youtube" } // MODIFIABLE
       ]
     }
@@ -265,8 +265,8 @@ export const CONFIG = {
       title: "Shooting IA",
       category: "image",
       type: "image",
-      url: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", // MODIFIABLE
-      thumbnail: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&w=800&q=80"
+      url: "bierre.png", // MODIFIABLE
+      thumbnail: "video avec ia.mp4"
     },
     {
       id: 7,
@@ -280,8 +280,8 @@ export const CONFIG = {
      title: "IA",
       category: "Shooting IA",
       type: "video",
-      url: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", // MODIFIABLE
-      thumbnail: "https://images.unsplash.com/photo-1573164713612-4e7cbd01d816?auto=format&fit=crop&w=800&q=80" // MODIFIABLE
+      url: "imobile je suis le prix.png", // MODIFIABLE
+      thumbnail: "shoot 1.png" // MODIFIABLE
     }
   ],
 
