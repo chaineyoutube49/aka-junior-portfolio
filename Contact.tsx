@@ -8,14 +8,14 @@ export default function Contact() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
-            <div>
+            <div className="space-y-8 md:space-y-12">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-sm font-black text-primary tracking-[0.5em] uppercase mb-8 italic"
+                className="text-sm md:text-xs font-black text-primary tracking-[0.5em] uppercase mb-4 md:mb-6 italic"
               >
                 {CONFIG.contact_section.subtitle}
               </motion.h2>
@@ -24,8 +24,8 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-4xl md:text-6xl xl:text-8xl font-display font-black italic leading-[0.9] mb-12"
+                transition={{ delay: 0.2 }}
+                className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-display font-black italic leading-[1.1] mb-8 md:mb-12 break-words"
                 dangerouslySetInnerHTML={{ __html: CONFIG.contact_section.title }}
               />
 
@@ -76,27 +76,27 @@ export default function Contact() {
                   <input 
                     type="text" 
                     placeholder={CONFIG.contact_section.formNamePlaceholder} 
-                    className="w-full bg-white/5 border border-white/10 p-4 text-xs font-black tracking-widest focus:border-primary outline-none transition-colors"
+                    className="w-full bg-white/5 border border-white/10 p-3 md:p-4 text-sm md:text-xs font-black tracking-widest focus:border-primary outline-none transition-colors"
                   />
                 </div>
                 <div>
                   <input 
                     type="email" 
                     placeholder={CONFIG.contact_section.formEmailPlaceholder} 
-                    className="w-full bg-white/5 border border-white/10 p-4 text-xs font-black tracking-widest focus:border-primary outline-none transition-colors"
+                    className="w-full bg-white/5 border border-white/10 p-3 md:p-4 text-sm md:text-xs font-black tracking-widest focus:border-primary outline-none transition-colors"
                   />
                 </div>
                 <div>
                   <textarea 
                     placeholder={CONFIG.contact_section.formProjectPlaceholder} 
                     rows={4}
-                    className="w-full bg-white/5 border border-white/10 p-4 text-xs font-black tracking-widest focus:border-primary outline-none transition-colors resize-none"
+                    className="w-full bg-white/5 border border-white/10 p-3 md:p-4 text-sm md:text-xs font-black tracking-widest focus:border-primary outline-none transition-colors resize-none"
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
-                  className="w-full py-6 bg-primary text-white font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-500"
+                  className="w-full py-4 md:py-6 bg-primary text-white font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-500 text-sm md:text-xs"
                 >
                   {CONFIG.contact_section.formSubmit}
                 </button>
