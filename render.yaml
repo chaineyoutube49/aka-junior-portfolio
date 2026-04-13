@@ -1,0 +1,31 @@
+services:
+  # Static HTML site
+  - type: web
+    name: aka-junior-portfolio
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    routes:
+      - route: /index.html
+        serve: /index.html
+      - route: /**
+        serve: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    headers:
+      - path: /*.png
+        headers:
+          Cache-Control: public, max-age=31536000, immutable
+      - path: /*.jpg
+        headers:
+          Cache-Control: public, max-age=31536000, immutable
+      - path: /*.mp4
+        headers:
+          Cache-Control: public, max-age=31536000, immutable
+      - path: /*.svg
+        headers:
+          Cache-Control: public, max-age=31536000, immutable
+      - path: /*
+        headers:
+          Cache-Control: public, max-age=0, must-revalidate
