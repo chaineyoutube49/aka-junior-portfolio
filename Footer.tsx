@@ -1,5 +1,5 @@
 import { CONFIG } from "./Constant";
-import logo from "./logo.svg";
+import logo from "./public/logo.svg";
 
 export default function Footer() {
   return (

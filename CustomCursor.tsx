@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import smiley1 from "./smiley1.svg";
-import smiley2 from "./smiley2.svg";
-import smiley3 from "./smiley3.svg";
+import smiley1 from "./public/smiley1.svg";
+import smiley2 from "./public/smiley2.svg";
+import smiley3 from "./public/smiley3.svg";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });

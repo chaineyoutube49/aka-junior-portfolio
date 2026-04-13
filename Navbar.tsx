@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Menu, X, MessageSquare } from "lucide-react";
 import { CONFIG } from "./Constant";
-import logo from "./logo.svg";
+import logo from "./public/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
