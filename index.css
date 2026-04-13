@@ -16,6 +16,8 @@
     @apply bg-black text-white font-sans antialiased selection:bg-primary selection:text-white;
     overflow-x: hidden;
     cursor: none; /* For custom cursor */
+    max-width: 100vw;
+    min-height: 100vh;
     
     /* Texture premium pour le fond noir */
     background-image: 
@@ -31,6 +33,20 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-extrabold uppercase tracking-tighter;
+  }
+  
+  /* Mobile-specific fixes */
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+      width: 100vw;
+    }
+    
+    main {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
   }
 }
 

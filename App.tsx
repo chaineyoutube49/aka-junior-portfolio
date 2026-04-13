@@ -35,7 +35,7 @@ export default function App() {
       </AnimatePresence>
 
       {!loading && (
-        <div className="animate-in fade-in duration-1000">
+        <div className="animate-in fade-in duration-1000 w-full max-w-full overflow-x-hidden">
           <Navbar />
           <Hero />
           <About />
