@@ -57,6 +57,7 @@ export const CONFIG = {
       { name: "À Propos", href: "#about" },
       { name: "Services", href: "#services" },
       { name: "Pourquoi Nous", href: "#whyus" }, // MODIFIABLE : Ajout du lien vers la nouvelle section
+      { name: "Témoignages", href: "#testimonials" }, // MODIFIABLE : Ajout du lien vers la section témoignages
       { name: "Contact", href: "#contact" },
     ],
     cta: "Let's Talk"
@@ -284,6 +285,80 @@ export const CONFIG = {
       thumbnail: "shoot 1.png" // MODIFIABLE
     }
   ],
+
+  testimonials: {
+    subtitle: "// TÉMOIGNAGES",
+    title: "CE QUE NOS <span className=\"text-outline\">CLIENTS</span> DISENT",
+    description: "Découvrez les expériences de nos clients satisfaits",
+    reviews: [
+      {
+        id: 1,
+        name: "Marie Dubois",
+        company: "TechStart",
+        position: "CEO",
+        avatar: "m1.png",
+        rating: 5,
+        comment: "Aka Junior a transformé notre vision en réalité. Son expertise en développement web et son sens créatif ont dépassé nos attentes. Un professionnel exceptionnel !",
+        project: "Site E-commerce",
+        date: "Mars 2024"
+      },
+      {
+        id: 2,
+        name: "Jean Martin",
+        company: "InnovateLab",
+        position: "CTO",
+        avatar: "m2.png",
+        rating: 5,
+        comment: "La solution IA développée par Aka Junior a révolutionné nos processus. Une approche innovante et une exécution parfaite. Je recommande vivement !",
+        project: "Système IA",
+        date: "Février 2024"
+      },
+      {
+        id: 3,
+        name: "Sophie Laurent",
+        company: "Creative Agency",
+        position: "Directrice Marketing",
+        avatar: "moi png - Standard.png",
+        rating: 5,
+        comment: "Le design graphique et l'identité visuelle créés par Aka Junior sont magnifiques. Il a parfaitement compris notre marque et l'a sublimée.",
+        project: "Branding Complet",
+        date: "Janvier 2024"
+      },
+      {
+        id: 4,
+        name: "Pierre Bernard",
+        company: "MediaPro",
+        position: "Producteur",
+        avatar: "m3.png",
+        rating: 5,
+        comment: "Le montage vidéo professionnel réalisé par Aka Junior a donné vie à notre projet. Créativité et technique au rendez-vous !",
+        project: "Vidéo Promotionnelle",
+        date: "Décembre 2023"
+      },
+      {
+        id: 5,
+        name: "Claire Rousseau",
+        company: "EcoShop",
+        position: "Fondatrice",
+        avatar: "shoot.png",
+        rating: 5,
+        comment: "Aka Junior nous a accompagnés dans le développement de notre plateforme e-commerce. Un travail remarquable et un suivi impeccable.",
+        project: "Plateforme E-commerce",
+        date: "Novembre 2023"
+      },
+      {
+        id: 6,
+        name: "Thomas Petit",
+        company: "Digital Solutions",
+        position: "Directeur Technique",
+        avatar: "juniorpro.png",
+        rating: 5,
+        comment: "L'automatisation et l'intégration IA développées par Aka Junior ont optimisé nos opérations de 40%. Un investissement rentable !",
+        project: "Automatisation IA",
+        date: "Octobre 2023"
+      }
+    ]
+  },
 
   socials: {
     instagram: "https://instagram.com/akajunior",

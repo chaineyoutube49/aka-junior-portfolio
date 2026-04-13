@@ -11,6 +11,7 @@ import Hero from "./Hero";
 import About from "./About";
 import Services from "./Services";
 import WhyUs from "./WhyUs";
+import Testimonials from "./Testimonials";
 import AutoMarquee from "./AutoMarquee";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -41,6 +42,7 @@ export default function App() {
           <About />
           <Services />
           <WhyUs />
+          <Testimonials />
           <AutoMarquee />
           <Contact />
           <Footer />
